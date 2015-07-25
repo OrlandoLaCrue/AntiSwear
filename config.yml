@@ -1,0 +1,61 @@
+# Put the prefix here
+Prefix: '&0[&bNoSwear&0]'
+
+# If the player swear did the explosion should be enabled?
+Explosion: false
+
+# If they swore would you like to kick them ?
+Kick From Swearing: false
+
+# What was the kick message then ?
+Kick Message: '&4Swearing is not allowed'
+
+# what was the command after player swore ?
+Command after swearing: tell <player> swearing is not allowed
+
+# What is the global permission for all ? except commands (Future)
+Permission: noswear.admin
+
+# If player has no permission what was the message to be ?
+No Permission Message : 'you have no permission to do that'
+
+# Welcoming Message ?
+Welcome: true
+
+# What was it then ?
+Welcome Message: '&7Welcome back <player>'
+
+# Quiting Message ?
+Quit: true
+
+# What was it then ?
+Quit Message: '&7<player> has been quit'
+
+# You want to notify them if server is using anti swearing plugin ?
+Notify: true
+
+# Notification Message would be ?
+Notify Message: '&7Hello there <player> This server is using anti swear plugin'
+
+# You want to warn them from spamming ?
+spam warn: true
+
+# What is the warning message if they spammed ?
+spam warn message: '&4Spamming is not allowed'
+
+# Kick them from spamming ?
+spam kick: false
+
+# What is the kick reason to be ?
+spam kick message: '&4Spamming is not allowed'
+
+# Enable op advertising ?
+OP Adv: true
+
+# Interval for chatcooldown
+Interval: 1
+
+# List all swear words here
+List:
+  - fuck
+  - demn

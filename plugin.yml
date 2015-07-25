@@ -1,0 +1,70 @@
+name: NoSwear
+main: me.raymart.NoSwear
+website: http://bananarealms.net
+authors: [Raymart, AgentBeatzPH, FloThePony]
+version: 4.4
+description: kick or warn them from swearing
+softdepend: [PermissionsEx, Permissions, Essentials, EssentialsGroupManager, UnknownCommand]
+commands:
+  noswear:
+    description: noswear main command
+  swearconf:
+    description: config the noswear plugin
+permissions:
+# -------------------------------------------- #
+# Permission Nodes
+# -------------------------------------------- #
+  noswear.admin: {description: manage the command /noswear, default: false}
+  noswear.admin.reload: {description: manage the command /noswear reload, default: false}
+  noswear.admin.add: {description: manage the command /noswear add, default: false}
+  noswear.admin.delete: {description: manage the command /noswear delete, default: false}
+  noswear.admin.list: {description: manage the command /noswear list, default: false}
+  noswear.admin.chatcooldown: {description: /chatcooldown command, default: false}
+  noswear.admin.clearchat: {description: manage the command /clearchat, with th usage /clearchat <* or target>, default: false}
+  noswear.bypass.chatswear: {description: bypass the chat swear, default: false}
+  noswear.bypass.caps: {description: bypass the caps chat, default: false}
+  noswear.bypass.spam: {description: bypass the spam, default: false}
+  noswear.bypass.signswear: {description: bypass the sign swear, default: false}
+  noswear.bypass.chatcooldown: {description: bypass chat cooldown, default: false}
+# -------------------------------------------- #
+# Notation permission
+# -------------------------------------------- #
+  noswear.*:
+    default: op
+    children:
+      noswear.admin: true
+      noswear.admin.reload: true
+      noswear.admin.add: true
+      noswear.admin.delete: true
+      noswear.admin.list: true
+      noswear.admin.clearchat: true
+      noswear.admin.chatcooldown: true
+      noswear.bypass.chatswear: true
+      noswear.bypass.caps: true
+      noswear.bypass.spam: true
+      noswear.bypass.signswear: true
+      noswear.bypass.chatcooldown: true
+# -------------------------------------------- #
+# Commands
+# -------------------------------------------- #
+  noswear.admin.*:
+     default: op
+     children:
+       noswear.admin: true
+       noswear.admin.reload: true
+       noswear.admin.add: true
+       noswear.admin.delete: true
+       noswear.admin.list: true
+       noswear.admin.clearchat: true
+       noswear.admin.chatcooldown: true
+# -------------------------------------------- #
+# Bypass
+# -------------------------------------------- #
+  noswear.bypass.noswear:
+    default: op
+    children:
+      noswear.bypass.chatswear: true
+      noswear.bypass.signswear: true
+      noswear.bypass.spam: true
+      noswear.bypass.caps: true
+      noswear.bypass.chatcooldown: true
