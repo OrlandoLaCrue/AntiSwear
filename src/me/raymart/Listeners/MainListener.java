@@ -32,13 +32,13 @@ public class MainListener implements Listener {
             }
             else {
                 e.setCancelled(true);
-                p.sendMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ง") + ChatColor.GRAY + "Dont use that sort of language");
+                p.sendMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ยง") + ChatColor.GREEN + "Dont use that sort of language");
                 if(plugin.getConfig().getBoolean("Explosion", true)) {
                     p.getWorld().createExplosion(location, 0.5F);
                 }	else if(plugin.getConfig().getBoolean("Explosion", false)) {
                 }
                 if(plugin.getConfig().getBoolean("Kick From Swearing", true)) {
-                    p.kickPlayer(plugin.getConfig().getString("Kick Message").replaceAll("&", "ง"));
+                    p.kickPlayer(plugin.getConfig().getString("Kick Message").replaceAll("&", "ยง"));
                 }
                 plugin.getServer().dispatchCommand(Bukkit.getConsoleSender(), plugin.getConfig().getString("Command after swearing").replace("<player>", p.getName().replaceAll("none", "")));
             }
@@ -64,7 +64,7 @@ public class MainListener implements Listener {
                     plugin.getConfig().getString(e.getPlayer().getName()))) {
                 e.setCancelled(true);
                 if (plugin.getConfig().getBoolean("spam kick")) {
-                    e.getPlayer().kickPlayer(plugin.getConfig().getString("spam kick message").replaceAll("&", "ง"));
+                    e.getPlayer().kickPlayer(plugin.getConfig().getString("spam kick message").replaceAll("&", "ยง"));
                     return;
                 }
                 if(plugin.getConfig().getBoolean("spam warn")) {
@@ -77,14 +77,14 @@ public class MainListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player user = e.getPlayer();
-        String JoinMessage = plugin.getConfig().getString("Welcome Message").replaceAll("&", "ง").replace("<player>", user.getName());
+        String JoinMessage = plugin.getConfig().getString("Welcome Message").replaceAll("&", "ยง").replace("<player>", user.getName());
         if(plugin.getConfig().getBoolean("Welcome", true)) {
-            e.setJoinMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ง") + JoinMessage);
+            e.setJoinMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ยง") + JoinMessage);
         }else if (plugin.getConfig().getBoolean("Welcome", false)) {
             e.setJoinMessage(null);
         }
         if(plugin.getConfig().getBoolean("Notify", true)) {
-            user.sendMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ง") + plugin.getConfig().getString("Notify Message").replaceAll("&", "ง").replace("<player>", user.getName()));
+            user.sendMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ยง") + plugin.getConfig().getString("Notify Message").replaceAll("&", "ยง").replace("<player>", user.getName()));
         }else if(plugin.getConfig().getBoolean("Notify", false)) {
             user.sendMessage("".replace("", null));
         }
@@ -92,9 +92,9 @@ public class MainListener implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent e) {
         Player user = e.getPlayer();
-        String QuitMessage = plugin.getConfig().getString("Welcome Message").replaceAll("&", "ง").replace("<player>", user.getName());
+        String QuitMessage = plugin.getConfig().getString("Welcome Message").replaceAll("&", "ยง").replace("<player>", user.getName());
         if(plugin.getConfig().getBoolean("Quit", true)) {
-            e.setQuitMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ง") + QuitMessage);
+            e.setQuitMessage(plugin.getConfig().getString("Prefix").replaceAll("&", "ยง") + QuitMessage);
         }else if(plugin.getConfig().getBoolean("Quit", false)) {
             e.setQuitMessage(null);
         }
@@ -111,7 +111,7 @@ public class MainListener implements Listener {
                         (user.hasPermission("noswear.bypass.signswear"))) continue;
                 e.setCancelled(true);
                 if (plugin.getConfig().getBoolean("Kick From Swearing")) {
-                    user.kickPlayer(plugin.getConfig().getString("Kick Message").replaceAll("&", "ง"));
+                    user.kickPlayer(plugin.getConfig().getString("Kick Message").replaceAll("&", "ยง"));
                 }
                 if (plugin.getConfig().getBoolean("Explosion")) {
                     user.getWorld().createExplosion(user.getLocation(), 0.5F);
